@@ -4,6 +4,10 @@ if ((get-host).version.major -lt 7)
     exit 1
 }
 
+# install oh-my-posh
+winget install JanDeDobbeleer.OhMyPosh
+
+
 # link profile
 rm $PROFILE
 New-Item -ItemType SymbolicLink -Path $PROFILE -Target $PSScriptRoot/profile.ps1
