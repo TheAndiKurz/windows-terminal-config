@@ -5,7 +5,10 @@ if ((get-host).version.major -lt 7)
 }
 
 # install oh-my-posh
-winget install JanDeDobbeleer.OhMyPosh
+if (-not (Get-Command oh-my-posh -errorAction SilentlyContinue))
+{
+    winget install JanDeDobbeleer.OhMyPosh
+}
 
 
 # link profile
